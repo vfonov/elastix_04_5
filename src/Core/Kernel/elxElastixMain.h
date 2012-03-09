@@ -26,7 +26,6 @@
 #include <fstream>
 
 
-
 namespace elastix
 {
 using namespace itk;

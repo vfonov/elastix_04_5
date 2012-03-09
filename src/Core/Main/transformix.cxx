@@ -17,9 +17,16 @@
 
 #include "transformix.h"
 
+#ifdef USE_EZMINC
+#include <itkMincImageIOFactory.h>
+#endif
 
 int main( int argc, char **argv )
 {
+  #ifdef USE_EZMINC
+  itk::RegisterMincIO();
+  #endif
+  
   /** Check if "-help" or "--version" was asked for.*/
   if ( argc == 1 )
   {

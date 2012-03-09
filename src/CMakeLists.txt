@@ -26,6 +26,16 @@ IF( ELASTIX_USE_CUDA )
 	MARK_AS_ADVANCED( CUDA_SDK_ROOT_DIR )
 ENDIF()
 
+#---------------------------------------------------------------------
+# Find MINC
+OPTION(ELASTIX_USE_EZMINC "Use EZMINC for minc support")
+
+IF(ELASTIX_USE_EZMINC)
+  FIND_PACKAGE( MINC2 REQUIRED )
+  INCLUDE( ${MINC2_USE_FILE} )
+  ADD_DEFINITIONS( -DUSE_EZMINC )
+ENDIF(ELASTIX_USE_EZMINC)
+
 #----------------------------------------------------------------------
 # Check for the SuiteSparse package
 # We need to do that here, because the link_directories should be set

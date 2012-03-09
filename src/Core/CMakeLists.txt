@@ -143,6 +143,10 @@ ADD_EXECUTABLE( transformix
   ${InstallFilesForExecutables}
 )
 
+IF(ELASTIX_USE_EZMINC)
+  TARGET_LINK_LIBRARIES(transformix ${MINC4ITK_LIBRARIES})
+ENDIF(ELASTIX_USE_EZMINC)
+
 #---------------------------------------------------------------------
 # Link elastix against other libraries.
 
@@ -160,6 +164,10 @@ TARGET_LINK_LIBRARIES( elastix
   ${AllComponentLibs}
 )
 
+IF(ELASTIX_USE_EZMINC)
+  TARGET_LINK_LIBRARIES(elastix ${MINC4ITK_LIBRARIES})
+ENDIF(ELASTIX_USE_EZMINC)
+
 #---------------------------------------------------------------------
 # Link transformix against other libraries.
 
@@ -176,6 +184,11 @@ TARGET_LINK_LIBRARIES( transformix
   ITKStatistics
   ${AllComponentLibs}
 )
+
+IF(ELASTIX_USE_EZMINC)
+  TARGET_LINK_LIBRARIES(elastix ${MINC4ITK_LIBRARIES})
+ENDIF(ELASTIX_USE_EZMINC)
+
 
 #---------------------------------------------------------------------
 # Define the install directory for elastix and transformix.
