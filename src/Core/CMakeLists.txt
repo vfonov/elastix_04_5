@@ -144,7 +144,7 @@ ADD_EXECUTABLE( transformix
 )
 
 IF(ELASTIX_USE_EZMINC)
-  TARGET_LINK_LIBRARIES(transformix ${MINC4ITK_LIBRARIES})
+  TARGET_LINK_LIBRARIES(transformix ${MINC4ITK_LIBRARIES} ${EZMINC_LIBRARIES})
 ENDIF(ELASTIX_USE_EZMINC)
 
 #---------------------------------------------------------------------
@@ -165,7 +165,7 @@ TARGET_LINK_LIBRARIES( elastix
 )
 
 IF(ELASTIX_USE_EZMINC)
-  TARGET_LINK_LIBRARIES(elastix ${MINC4ITK_LIBRARIES})
+  TARGET_LINK_LIBRARIES(elastix ${MINC4ITK_LIBRARIES} ${EZMINC_LIBRARIES})
 ENDIF(ELASTIX_USE_EZMINC)
 
 #---------------------------------------------------------------------
